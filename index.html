@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>EPAM test task</title>
+</head>
+
+<body>
+    <h1>EPAM test task</h1>
+    <select id="sortType" name="sortType">
+    <option value="1" selected>Ascending order</option>
+    <option value="0">Descending order</option>
+    
+   </select>
+    <div id="wrapper">
+    <p> Click headers to sort rows </p>
+        <table id="json-table">
+            <tr>
+                <th onclick="">picture</th>
+                <th onclick="sortTable(1,order)">title</th>
+                <th onclick="sortTable(2,order)">first name</th>
+                <th onclick="sortTable(3,order)">last name </th>
+            </tr>
+        </table>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
