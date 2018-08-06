@@ -4,10 +4,11 @@ request.onload = function () {
     var studentsData = JSON.parse(request.responseText);
     console.log(studentsData.results);
     renderHTML(studentsData.results);
+    
 };
 request.send();
 var dataContainer = document.getElementById("json-table");
-
+//creating table raws with all its contnent
 function renderHTML(data) {
     var htmlString = "";
     for (i = 0; i < data.length; i++) {
@@ -20,14 +21,16 @@ function renderHTML(data) {
     };
     dataContainer.insertAdjacentHTML('beforeend', htmlString);
 };
-var order = 1;
-// n =1 ascending order; n=0 descending 
+
+
+var table = document.getElementById("json-table");
+
+//sorting table raws in defined order
 function sortTable(n) {
-    var table, rows, x, y;
-    table = document.getElementById("json-table");
-    rows = table.getElementsByTagName("TR");
+  var order = document.getElementById('sortType').value;
+  var rows, x, y;
+    rows = table.rows;
     var len = rows.length;
-    var order = document.getElementById('sortType').value;
     for (j = 1; j < len; j++)
         for (i = 1; i < (len - j); i++) {
 
@@ -50,12 +53,15 @@ function sortTable(n) {
 }
 
 function showInfo(id) {
+    if (document.getElementById('person_info')) {
+        document.getElementById('person_info').parentNode.removeChild(document.getElementById('person_info'));
+    }
     var popup = document.createElement('div');
-    var wrapper = document.getElementById('wrapper');
+    popup.id = 'person_info';
+    
     var studentsData = JSON.parse(request.responseText);
     var data = studentsData.results;
     popup.className = 'popup';
-    popup.id = 'test';
     var cancel = document.createElement('div');
     cancel.className = 'cancel';
     cancel.innerHTML = 'X';

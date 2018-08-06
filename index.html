@@ -13,18 +13,19 @@
 <body>
     <h1>EPAM test task</h1>
     <select id="sortType" name="sortType">
-    <option value="1" selected>Ascending order</option>
-    <option value="0">Descending order</option>
-    
-   </select>
+        <option value="1" selected>Ascending order</option>
+        <option value="0">Descending order</option>
+    </select>
+
     <div id="wrapper">
-    <p> Click headers to sort rows </p>
+        <p> Click headers to sort rows </p>
         <table id="json-table">
             <tr>
-                <th onclick="">picture</th>
-                <th onclick="sortTable(1,order)">title</th>
-                <th onclick="sortTable(2,order)">first name</th>
-                <th onclick="sortTable(3,order)">last name </th>
+                <th
+                 onclick="">picture</th>
+                <th onclick="sortTable(1)">title</th>
+                <th onclick="sortTable(2)">first name</th>
+                <th onclick="sortTable(3)">last name </th>
             </tr>
         </table>
     </div>
